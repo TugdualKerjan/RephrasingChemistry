@@ -47,15 +47,15 @@ class LLMSwarm:
 
 
     def start(self):
-        # template = self.scheduler.read_job_template(self.config.template_path)
+        template = self.scheduler.read_job_template(self.config.template_path)
 
-        # job_timestamp, path, host_path, template = self.scheduler.generate_job_config(self.config, template)
+        job_timestamp, path, host_path, template = self.scheduler.generate_job_config(self.config, template)
 
-        # job_ids = self.scheduler.start_jobs(path, template, job_timestamp, self.config.instances)
+        job_ids = self.scheduler.start_jobs(path, template, job_timestamp, self.config.instances)
         # job_ids = ["runai-1715766381-0", "runai-1715766381-1", "runai-1715766381-3"]
-        job_ids = ["runai-1715862733-0"]
-        host_path = ""
-        job_timestamp= "1715862733"
+        # job_ids = ["runai-1715862733-0"]
+        # host_path = ""
+        # job_timestamp= "1715862733"
         self._wait_for_jobs_to_start(job_ids)
         self._wait_for_endpoints_to_be_reachable(host_path, job_ids)
 
